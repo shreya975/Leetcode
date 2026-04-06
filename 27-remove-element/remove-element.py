@@ -1,10 +1,10 @@
 class Solution:
     def removeElement(self, nums, val):
-        insert_pos = 0
+        k = 0  # position to place next valid element
 
         for i in range(len(nums)):
             if nums[i] != val:
-                nums[insert_pos] = nums[i]
-                insert_pos += 1
+                nums[k] = nums[i]
+                k += 1
 
-        return insert_pos
+        return k
