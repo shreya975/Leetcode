@@ -1,11 +1,12 @@
 class Solution:
     def moveZeroes(self, nums):
-        insert_pos = 0
+        k = 0  # position to place next non-zero
 
         for i in range(len(nums)):
             if nums[i] != 0:
-                nums[insert_pos] = nums[i]
-                insert_pos += 1
+                nums[k] = nums[i]
+                k += 1
 
-        for i in range(insert_pos, len(nums)):
+        # fill remaining with zeros
+        for i in range(k, len(nums)):
             nums[i] = 0
